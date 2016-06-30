@@ -19,11 +19,13 @@ function lastName() {
   setTimeout( function(){
     // a thousand vowels descending to a susurrous
     var lastNameAnswerElement = $("#lastNameAnswer");
-    var possible = "AEIOUYaeiouy";
-
-    setInterval( function() {
+    var possible = "AEIOUY";
+    var fontSize = 100;
+    interval = setInterval( function() {
       needNewVowel = false;
       currentText = lastNameAnswerElement.text();
+      currentHTML = lastNameAnswerElement.html();
+
       if (currentText == "") {
         needNewVowel = true;
       }
@@ -33,11 +35,17 @@ function lastName() {
       if (needNewVowel) {
         randomVowel = possible.charAt(Math.floor(Math.random() * possible.length));
       }
-      newText = currentText + randomVowel
-      lastNameAnswerElement.text(newText);
+      fontSize = fontSize - 1;
+      newText = currentHTML + "<span style='font-size:"+ fontSize +"%;'>" + randomVowel + "</span>" ;
+      lastNameAnswerElement.html(newText);
+
+      if (fontSize == 0 ){
+        clearInterval(interval)
+      }
     }, 250);
-  }, 8000)
+  }, 5000)
 }
+
 
 firstName();
 lastName();
