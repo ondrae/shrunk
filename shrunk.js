@@ -21,7 +21,7 @@ function lastName() {
     var lastNameAnswerElement = $("#lastNameAnswer");
     var possible = "AEIOUY";
     var fontSize = 100;
-    interval = setInterval( function() {
+    lastNameInterval = setInterval( function() {
       needNewVowel = false;
       currentText = lastNameAnswerElement.text();
       currentHTML = lastNameAnswerElement.html();
@@ -35,17 +35,35 @@ function lastName() {
       if (needNewVowel) {
         randomVowel = possible.charAt(Math.floor(Math.random() * possible.length));
       }
-      fontSize = fontSize - 1;
+      fontSize = fontSize - 2;
       newText = currentHTML + "<span style='font-size:"+ fontSize +"%;'>" + randomVowel + "</span>" ;
       lastNameAnswerElement.html(newText);
-
-      if (fontSize == 0 ){
-        clearInterval(interval)
+      if (fontSize <= 0 ){
+        clearInterval(lastNameInterval)
       }
     }, 250);
   }, 5000)
 }
 
+function address() {
+  var addressAnswerElement = $("#addressAnswer");
+  glyphs = ["&yen;","&sect;","&micro;","&THORN;","&eth;","&Xi;","&Psi;","&gamma;","&delta;","&zeta;","&eta;","&xi;","&sigmaf;","&psi;","&thetasym;","&weierp;","&image;","&real;","&notin;","&scaron;","&dagger;","&Dagger;"]
+  counter = 100;
+  setTimeout( function(){
+    interval = setInterval( function (){
+      currentText = addressAnswerElement.html();
+      randomGlyph = glyphs[Math.floor(Math.random() * glyphs.length)]
+      newText = currentText + randomGlyph;
+      addressAnswerElement.html(newText);
+      counter = counter - 5;
+      if (counter == 0) {
+        addressAnswerElement.html(newText + "<br/>Apt #12");
+        clearInterval(interval);
+      }
+    }, 250);
+  }, 15000);
+ }
 
 firstName();
 lastName();
+address();
