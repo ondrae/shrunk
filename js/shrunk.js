@@ -41,7 +41,7 @@ function lastName() {
       if (fontSize <= 0 ){
         clearInterval(lastNameInterval)
       }
-    }, 250);
+    }, 120);
   }, 5000)
 }
 
@@ -60,10 +60,63 @@ function address() {
         addressAnswerElement.html(newText + "<br/>Apt #12");
         clearInterval(interval);
       }
-    }, 250);
-  }, 15000);
+    }, 333);
+  }, 11000);
  }
+
+function phone(){
+  var phoneAnswerElement = $("#phoneAnswer");
+
+  function getRandomNumber() {
+    return Math.floor(Math.random() * 10).toString();
+  }
+
+  function getRandomPhoneNumber() {
+    phoneNumber = "";
+    [1,2,3,4,5,6,7,8,9,10].forEach(function(i) {
+      phoneNumber = phoneNumber + getRandomNumber()
+    });
+    phoneNumber = [phoneNumber.slice(0, 3), "-", phoneNumber.slice(3)].join('');
+    phoneNumber = [phoneNumber.slice(0, 7), "-", phoneNumber.slice(7)].join('');
+    return phoneNumber
+  }
+
+  setTimeout( function(){
+    phoneAnswerElement.text(getRandomPhoneNumber);
+    phoneAnswerElement.textillate(
+      { in:
+        {
+          effect: 'rollIn',
+          delayScale: 5,
+          delay: 40,
+          shuffle: true
+        },
+        out: {
+          effect: 'fadeOut',
+          delayScale: 5,
+          delay: 40,
+          shuffle: true
+        },
+        minDisplayTime: 0,
+        loop: true
+      }
+    );
+  }, 18000);
+}
+
+function ssn(){
+  $.getScript('js/sudokuJS.js', function() {
+    var mySudokuJS = $("#ssnAnswer").sudokuJS({
+      difficulty: "easy"
+    });
+    setInterval(function(){
+      mySudokuJS.solveStep();
+    }, 250)
+  });
+}
 
 firstName();
 lastName();
 address();
+phone();
+ssn();

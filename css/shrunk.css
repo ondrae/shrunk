@@ -1,0 +1,29 @@
+header {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.questionColumn {
+  width: 20%;
+}
+
+td:first-child {
+ font-weight: bold;
+}
+
+#firstNameAnswer {
+  font-family: 'Permanent Marker', cursive;
+  font-size: xx-large;
+}
+#lastNameAnswer {
+  font-family: 'Permanent Marker', cursive;
+  font-size: xx-large;
+}
+#addressAnswer {
+  font-family: 'Permanent Marker', cursive;
+  font-size: xx-large;
+}
+#phoneAnswer {
+  font-family: 'Permanent Marker', cursive;
+  font-size: xx-large;
+}

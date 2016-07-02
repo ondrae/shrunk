@@ -9,6 +9,12 @@
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+
+    <link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -20,35 +26,11 @@
 
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 
+
+    <link rel="stylesheet" href="css/shrunk.css" />
+    <link rel='stylesheet' href='css/sudokuJS.css' />
+
   </head>
-
-  <style>
-    header {
-      text-align: center;
-      text-decoration: underline;
-    }
-
-    .questionColumn {
-      width: 20%;
-    }
-
-    td:first-child {
-     font-weight: bold;
-    }
-
-    #firstNameAnswer {
-      font-family: 'Permanent Marker', cursive;
-      font-size: xx-large;
-    }
-    #lastNameAnswer {
-      font-family: 'Permanent Marker', cursive;
-      font-size: xx-large;
-    }
-    #addressAnswer {
-      font-family: 'Permanent Marker', cursive;
-      font-size: xx-large;
-    }
-  </style>
 
   <body>
     <div class="container-fluid">
@@ -79,6 +61,14 @@
                 <td>Address</td>
                 <td id="addressAnswer"></td>
               </tr>
+              <tr>
+                <td>Phone Number</td>
+                <td id="phoneAnswer"></td>
+              </tr>
+              <tr>
+                <td>Social Security Number</td>
+                <td id="ssnAnswer"></td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -86,5 +76,6 @@
     </div>
   </body>
 
-  <script src="shrunk.js"></script>
+  <script src="js/shrunk.js"></script>
+
 </html>
