@@ -105,14 +105,14 @@ function phone(){
 }
 
 function ssn(){
-  $.getScript('js/sudokuJS.js', function() {
-    var mySudokuJS = $("#ssnAnswer").sudokuJS({
-      difficulty: "easy"
+  setTimeout( function(){
+    $.getScript('js/sudokuJS.js', function() {
+      var mySudokuJS = $("#ssnAnswer").sudokuJS({});
+      setInterval(function(){
+        mySudokuJS.solveStep();
+      }, 333)
     });
-    setInterval(function(){
-      mySudokuJS.solveStep();
-    }, 250)
-  });
+  }, 24000);
 }
 
 firstName();
