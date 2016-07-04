@@ -141,7 +141,19 @@ function employment() {
   employmentAnswerElement = $("#employmentAnswer");
   setTimeout(function(){
     employmentAnswerElement.html('<img src="images/trillionaires.gif" />');
-  }, 1000)
+  }, 31000)
+}
+
+function medicalHistory() {
+  medicalHistoryAnswerElement = $("#medicalHistoryAnswer");
+  courses = ["Abnormal Psychology (PSY322)", "Social Conflict and its Resolution (PSY332)", "Drug Addiction (PSY451)"]
+  setTimeout(function(){
+    setInterval(function(){
+      randomCourse = courses[Math.floor(Math.random() * courses.length)]
+      medicalHistoryAnswerElement.text(randomCourse);
+    }, 5000);
+  }, 31000)
+
 }
 
 firstName();
@@ -152,3 +164,4 @@ ssn();
 age();
 emergency();
 employment();
+medicalHistory();
