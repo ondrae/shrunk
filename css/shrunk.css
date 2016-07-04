@@ -3,8 +3,18 @@ header {
   text-decoration: underline;
 }
 
+table {
+  width: 100%
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 .questionColumn {
   width: 20%;
+}
+
+.answerColumn {
+  width: 75%;
 }
 
 td:first-child {
@@ -30,4 +40,7 @@ td:first-child {
 #ageAnswer {
   font-family: 'Permanent Marker', cursive;
   font-size: xx-large;
+}
+#emergencyAnswer img {
+  max-width: 100%;
 }

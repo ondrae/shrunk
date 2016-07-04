@@ -5,7 +5,7 @@ function firstName(){
   setInterval( function() {
     currentText = firstNameAnswerElement.text();
     randomNewChar = possible.charAt(Math.floor(Math.random() * possible.length));
-    if (firstNameAnswerElement.text().length < 20 ) {
+    if (firstNameAnswerElement.text().length < 14 ) {
       newText = currentText + randomNewChar
     } else {
       randomExistingChar = currentText.charAt(Math.floor(Math.random() * currentText.length));
@@ -37,6 +37,9 @@ function lastName() {
       }
       fontSize = fontSize - 2;
       newText = currentHTML + "<span style='font-size:"+ fontSize +"%;'>" + randomVowel + "</span>" ;
+      if (lastNameAnswerElement.text().length == 14) {
+        newText = newText + "<br/>";
+      }
       lastNameAnswerElement.html(newText);
       if (fontSize <= 0 ){
         clearInterval(lastNameInterval)
@@ -117,14 +120,21 @@ function age(){
   ageAnswerElement.css("text-shadow", "0 0 8px #000");
   setTimeout(function(){
     setInterval(function(){
-      randomAge = getRandomNumber()  * getRandomNumber();
+      randomAge = getRandomNumber() * getRandomNumber();
       ageAnswerElement.text(randomAge);
-    }, 3000);
-  }, 23000)
+    }, 4000);
+  }, 21000)
 }
 
 function getRandomNumber() {
   return Math.floor(Math.random() * 10).toString();
+}
+
+function emergency() {
+  emergencyAnswerElement = $("#emergencyAnswer");
+  setTimeout(function(){
+    emergencyAnswerElement.html('<img src="images/cat.jpg" />');
+  }, 27000)
 }
 
 firstName();
@@ -133,3 +143,4 @@ address();
 phone();
 ssn();
 age();
+emergency();
