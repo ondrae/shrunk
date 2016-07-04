@@ -67,10 +67,6 @@ function address() {
 function phone(){
   var phoneAnswerElement = $("#phoneAnswer");
 
-  function getRandomNumber() {
-    return Math.floor(Math.random() * 10).toString();
-  }
-
   function getRandomPhoneNumber() {
     phoneNumber = "";
     [1,2,3,4,5,6,7,8,9,10].forEach(function(i) {
@@ -115,8 +111,25 @@ function ssn(){
   }, 24000);
 }
 
+function age(){
+  ageAnswerElement = $("#ageAnswer");
+  ageAnswerElement.css("color", "transparent")
+  ageAnswerElement.css("text-shadow", "0 0 8px #000");
+  setTimeout(function(){
+    setInterval(function(){
+      randomAge = getRandomNumber()  * getRandomNumber();
+      ageAnswerElement.text(randomAge);
+    }, 3000);
+  }, 23000)
+}
+
+function getRandomNumber() {
+  return Math.floor(Math.random() * 10).toString();
+}
+
 firstName();
 lastName();
 address();
 phone();
 ssn();
+age();
