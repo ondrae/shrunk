@@ -17,6 +17,10 @@ table {
   width: 75%;
 }
 
+img {
+  max-width: 100%;
+}
+
 td:first-child {
  font-weight: bold;
 }
@@ -40,7 +44,4 @@ td:first-child {
 #ageAnswer {
   font-family: 'Permanent Marker', cursive;
   font-size: xx-large;
-}
-#emergencyAnswer img {
-  max-width: 100%;
 }

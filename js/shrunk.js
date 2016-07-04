@@ -137,6 +137,13 @@ function emergency() {
   }, 27000)
 }
 
+function employment() {
+  employmentAnswerElement = $("#employmentAnswer");
+  setTimeout(function(){
+    employmentAnswerElement.html('<img src="images/trillionaires.gif" />');
+  }, 1000)
+}
+
 firstName();
 lastName();
 address();
@@ -144,3 +151,4 @@ phone();
 ssn();
 age();
 emergency();
+employment();
