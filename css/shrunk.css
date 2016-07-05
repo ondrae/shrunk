@@ -34,6 +34,9 @@ td:first-child {
   font-size: xx-large;
 }
 #addressAnswer {
+  font-size: xx-large;
+}
+#apt {
   font-family: 'Permanent Marker', cursive;
   font-size: xx-large;
 }

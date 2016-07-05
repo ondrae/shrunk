@@ -62,7 +62,7 @@ function address() {
       addressAnswerElement.html(newText);
       counter = counter - 6;
       if (counter <= 0) {
-        addressAnswerElement.html(newText + "<br/>Apt #12");
+        addressAnswerElement.html(newText + "<br/><div id='apt'>Apt #12</div>");
         clearInterval(interval);
       }
     }, 333);
@@ -100,7 +100,7 @@ function phone(){
       phoneAnswerElement.text(getRandomPhoneNumber);
       phoneAnswerElement.textillate(textilateOptions);
     }, 5000)
-  }, 13000);
+  }, 15000);
 }
 
 function ssn(){
@@ -166,6 +166,20 @@ function service(){
   }, 43000);
 }
 
+function allergies(){
+  allergyElement = $("#allergiesAnswer");
+  allergyCounter = 100;
+  setTimeout(function(){
+    allergyInterval = setInterval(function(){
+      allergyElement.append("🍔💊")
+      allergyCounter = allergyCounter - 5;
+      if (allergyCounter < 0) {
+        clearInterval(allergyInterval);
+      }
+    }, 250);
+  }, 45000);
+}
+
 $("audio").on("playing", function(){
   firstName();
   lastName();
@@ -177,4 +191,5 @@ $("audio").on("playing", function(){
   employment();
   medicalHistory();
   service();
+  allergies();
 })
