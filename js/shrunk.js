@@ -1,18 +1,20 @@
 function firstName(){
   var firstNameAnswerElement = $("#firstNameAnswer")
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&*()_+-=[]{};:'/?.>,<'";
+  setTimeout( function() {
+    setInterval( function() {
+      currentText = firstNameAnswerElement.text();
+      randomNewChar = possible.charAt(Math.floor(Math.random() * possible.length));
+      if (firstNameAnswerElement.text().length < 14 ) {
+        newText = currentText + randomNewChar
+      } else {
+        randomExistingChar = currentText.charAt(Math.floor(Math.random() * currentText.length));
+        newText = currentText.replace(randomExistingChar, randomNewChar);
+      }
+      firstNameAnswerElement.text(newText);
+    }, 250)
+  }, 2000)
 
-  setInterval( function() {
-    currentText = firstNameAnswerElement.text();
-    randomNewChar = possible.charAt(Math.floor(Math.random() * possible.length));
-    if (firstNameAnswerElement.text().length < 14 ) {
-      newText = currentText + randomNewChar
-    } else {
-      randomExistingChar = currentText.charAt(Math.floor(Math.random() * currentText.length));
-      newText = currentText.replace(randomExistingChar, randomNewChar);
-    }
-    firstNameAnswerElement.text(newText);
-  }, 250)
 }
 
 function lastName() {
@@ -45,7 +47,7 @@ function lastName() {
         clearInterval(lastNameInterval)
       }
     }, 120);
-  }, 5000)
+  }, 7000)
 }
 
 function address() {
@@ -58,13 +60,13 @@ function address() {
       randomGlyph = glyphs[Math.floor(Math.random() * glyphs.length)]
       newText = currentText + randomGlyph;
       addressAnswerElement.html(newText);
-      counter = counter - 5;
-      if (counter == 0) {
+      counter = counter - 6;
+      if (counter <= 0) {
         addressAnswerElement.html(newText + "<br/>Apt #12");
         clearInterval(interval);
       }
     }, 333);
-  }, 11000);
+  }, 13000);
  }
 
 function phone(){
@@ -80,27 +82,25 @@ function phone(){
     return phoneNumber
   }
 
-  setTimeout( function(){
-    phoneAnswerElement.text(getRandomPhoneNumber);
-    phoneAnswerElement.textillate(
-      { in:
-        {
-          effect: 'rollIn',
-          delayScale: 5,
-          delay: 40,
-          shuffle: true
-        },
-        out: {
-          effect: 'fadeOut',
-          delayScale: 5,
-          delay: 40,
-          shuffle: true
-        },
-        minDisplayTime: 0,
-        loop: true
+  textilateOptions = {
+    in: {
+      effect: 'fadeIn',
+      delayScale: 5,
+      delay: 40,
+      shuffle: true,
+      callback: function() {
+        $("#graffiti").text("for a good time");
+        $("#graffiti").textillate(textilateOptions);
       }
-    );
-  }, 18000);
+    }
+  }
+
+  setTimeout( function(){
+    setInterval(function(){
+      phoneAnswerElement.text(getRandomPhoneNumber);
+      phoneAnswerElement.textillate(textilateOptions);
+    }, 5000)
+  }, 13000);
 }
 
 function ssn(){
@@ -111,7 +111,7 @@ function ssn(){
         mySudokuJS.solveStep();
       }, 333)
     });
-  }, 24000);
+  }, 26000);
 }
 
 function age(){
@@ -123,7 +123,7 @@ function age(){
       randomAge = getRandomNumber() * getRandomNumber();
       ageAnswerElement.text(randomAge);
     }, 4000);
-  }, 21000)
+  }, 23000)
 }
 
 function getRandomNumber() {
@@ -134,34 +134,47 @@ function emergency() {
   emergencyAnswerElement = $("#emergencyAnswer");
   setTimeout(function(){
     emergencyAnswerElement.html('<img src="images/cat.jpg" />');
-  }, 27000)
+  }, 29000)
 }
 
 function employment() {
   employmentAnswerElement = $("#employmentAnswer");
   setTimeout(function(){
     employmentAnswerElement.html('<img src="images/trillionaires.gif" />');
-  }, 31000)
+  }, 32000)
 }
 
 function medicalHistory() {
   medicalHistoryAnswerElement = $("#medicalHistoryAnswer");
-  courses = ["Abnormal Psychology (PSY322)", "Social Conflict and its Resolution (PSY332)", "Drug Addiction (PSY451)"]
+  courses = ["Abnormal Psychology (PSY322)", "Social Conflict and its Resolution (PSY332)",
+             "Drug Addiction (PSY451)",  "Hippocrates and Western Medicine (PSY363)",
+             "Principles of Pathology (MED365)"]
   setTimeout(function(){
     setInterval(function(){
       randomCourse = courses[Math.floor(Math.random() * courses.length)]
       medicalHistoryAnswerElement.text(randomCourse);
-    }, 5000);
-  }, 31000)
-
+    }, 2000);
+  }, 35000);
+  setTimeout(function(){
+    $("#otherMedicalHistory").text("Charlatan psychiatry and troubleshooting undertow")
+  }, 41000);
 }
 
-firstName();
-lastName();
-address();
-phone();
-ssn();
-age();
-emergency();
-employment();
-medicalHistory();
+function service(){
+  setTimeout(function(){
+    $("#serviceAnswer").text("Nervous");
+  }, 43000);
+}
+
+$("audio").on("playing", function(){
+  firstName();
+  lastName();
+  address();
+  phone();
+  ssn();
+  age();
+  emergency();
+  employment();
+  medicalHistory();
+  service();
+})

@@ -41,11 +41,23 @@ td:first-child {
   font-family: 'Permanent Marker', cursive;
   font-size: xx-large;
 }
+#graffiti {
+  font-family: 'Permanent Marker', cursive;
+  font-size: large;
+}
 #ageAnswer {
   font-family: 'Permanent Marker', cursive;
   font-size: xx-large;
 }
 #medicalHistoryAnswer {
+  font-family: 'Permanent Marker', cursive;
+  font-size: xx-large;
+}
+#otherMedicalHistory {
+  font-family: 'Permanent Marker', cursive;
+  font-size: xx-large;
+}
+#serviceAnswer {
   font-family: 'Permanent Marker', cursive;
   font-size: xx-large;
 }

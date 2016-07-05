@@ -36,6 +36,7 @@
       <header>
         <h1>Psych Office Waiting Room</h1>
         <h3>Please fill out and bring to counter</h3>
+        <audio src="music/shrunk.m4a" controls="controls"/>
       </header>
 
       <section>
@@ -61,7 +62,10 @@
             </tr>
             <tr>
               <td>Phone Number</td>
-              <td id="phoneAnswer"></td>
+              <td>
+                <div id="phoneAnswer"></div>
+                <div id="graffiti"></div>
+              </td>
             </tr>
             <tr>
               <td>Social Security Number</td>
@@ -81,7 +85,14 @@
             </tr>
             <tr>
               <td>Medical History</td>
-              <td id="medicalHistoryAnswer"></td>
+              <td>
+                <div id="medicalHistoryAnswer"></div>
+                <div id="otherMedicalHistory"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Military Service</td>
+              <td id="serviceAnswer"></td>
             </tr>
           </tbody>
         </table>
