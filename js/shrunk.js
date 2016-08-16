@@ -155,9 +155,6 @@ function medicalHistory() {
       medicalHistoryAnswerElement.text(randomCourse);
     }, 2000);
   }, 35000);
-  setTimeout(function(){
-    $("#otherMedicalHistory").text("Charlatan psychiatry and troubleshooting undertow")
-  }, 41000);
 }
 
 function service(){
