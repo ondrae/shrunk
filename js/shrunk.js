@@ -177,6 +177,20 @@ function allergies(){
   }, 45000);
 }
 
+function lunch(){
+  lunchElement = $("#lunchAnswer");
+  setTimeout(function(){
+    lunchElement.append("Skipped");
+  }, 50000);
+}
+
+function shrink(){
+  shrinkElement = $("#shrinkAnswer");
+  setTimeout(function(){
+    shrinkElement.append("Shrunk");
+  }, 55000);
+}
+
 $("audio").on("playing", function(){
   firstName();
   lastName();
@@ -189,4 +203,6 @@ $("audio").on("playing", function(){
   medicalHistory();
   service();
   allergies();
+  lunch();
+  shrink();
 })

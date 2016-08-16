@@ -64,3 +64,14 @@ td:first-child {
   font-family: 'Permanent Marker', cursive;
   font-size: xx-large;
 }
+#lunchAnswer {
+  font-family: 'Permanent Marker', cursive;
+  font-size: xx-large;
+}
+#shrinkAnswer {
+  font-family: 'Permanent Marker', cursive;
+  font-size: xx-large;
+}
+footer {
+  margin-top: 25px;
+}
