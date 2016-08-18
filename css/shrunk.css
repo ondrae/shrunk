@@ -38,7 +38,6 @@ td:first-child {
 }
 #apt {
   font-family: 'Permanent Marker', cursive;
-  font-size: xx-large;
 }
 #phoneAnswer {
   font-family: 'Permanent Marker', cursive;
@@ -53,10 +52,6 @@ td:first-child {
   font-size: xx-large;
 }
 #medicalHistoryAnswer {
-  font-family: 'Permanent Marker', cursive;
-  font-size: xx-large;
-}
-#otherMedicalHistory {
   font-family: 'Permanent Marker', cursive;
   font-size: xx-large;
 }

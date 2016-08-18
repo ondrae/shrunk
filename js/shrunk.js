@@ -62,11 +62,14 @@ function address() {
       addressAnswerElement.html(newText);
       counter = counter - 6;
       if (counter <= 0) {
-        addressAnswerElement.html(newText + "<br/><div id='apt'>Apt #12</div>");
         clearInterval(interval);
       }
     }, 333);
   }, 13000);
+
+  setTimeout( function(){
+    $("#apt").text("Apt #12")
+  }, 19000)
  }
 
 function phone(){
@@ -87,11 +90,7 @@ function phone(){
       effect: 'fadeIn',
       delayScale: 5,
       delay: 40,
-      shuffle: true,
-      callback: function() {
-        $("#graffiti").text("for a good time");
-        $("#graffiti").textillate(textilateOptions);
-      }
+      shuffle: true
     }
   }
 
@@ -101,6 +100,10 @@ function phone(){
       phoneAnswerElement.textillate(textilateOptions);
     }, 5000)
   }, 15000);
+
+  setTimeout( function(){
+    $("#graffiti").text("for a good time");
+  }, 24000)
 }
 
 function ssn(){
@@ -165,16 +168,11 @@ function service(){
 
 function allergies(){
   allergyElement = $("#allergiesAnswer");
-  allergyCounter = 100;
   setTimeout(function(){
     allergyInterval = setInterval(function(){
       allergyElement.append("🍔💊")
-      allergyCounter = allergyCounter - 5;
-      if (allergyCounter < 0) {
-        clearInterval(allergyInterval);
-      }
     }, 250);
-  }, 45000);
+  }, 44000);
 }
 
 function lunch(){
